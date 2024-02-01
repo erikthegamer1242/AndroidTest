@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         textCount = findViewById<View>(R.id.textViewCounter) as TextView
-        sharedPref = getSharedPreferences("com.example.androidtest", Context.MODE_PRIVATE)
+        sharedPref = getPreferences(MODE_PRIVATE)
         sharedPref.getInt("count", count)
         Log.i("MyLog", "valOnStart ${count}")
 
@@ -54,17 +54,18 @@ class MainActivity : AppCompatActivity() {
         super.onPause()
         Toast.makeText(applicationContext, "onPause", Toast.LENGTH_SHORT).show()
         Log.i("MyLog", "onPause")
+        sharedPref.edit().putInt("count", count).apply()
+        Log.i("MyLog", "valOnStop ${count}")
+        var nigg = 69
+        sharedPref.getInt("count", nigg)
+        Log.i("MyLog", "valOnStopRet ${nigg}")
 
     }
     override fun onStop() {
         super.onStop()
         Toast.makeText(applicationContext, "onStop", Toast.LENGTH_SHORT).show()
         Log.i("MyLog", "onStop")
-        sharedPref.edit().putInt("count", count).apply()
-        Log.i("MyLog", "valOnStop ${count}")
-        var nigg = 69
-        sharedPref.getInt("count", nigg)
-        Log.i("MyLog", "valOnStopRet ${nigg}")
+
 
     }
     override fun onDestroy() {
