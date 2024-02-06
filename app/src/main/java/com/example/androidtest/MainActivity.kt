@@ -11,7 +11,6 @@ import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
     lateinit var textCount: TextView
-    lateinit var sharedPref : SharedPreferences
 
     companion object {
         const val COUNT_KEY = "COUNT_KEY" // const key to save/read value from bundle
@@ -26,9 +25,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         textCount = findViewById<View>(R.id.textViewCounter) as TextView
-        sharedPref = getPreferences(MODE_PRIVATE)
-        sharedPref.getInt("count", count)
-        Log.i("MyLog", "valOnStart ${count}")
+        val sharedPreferences = getSharedPreferences("shared", Context.MODE_PRIVATE)
+        count = sharedPreferences.getInt("count", 0)
 
 
     }
@@ -54,11 +52,11 @@ class MainActivity : AppCompatActivity() {
         super.onPause()
         Toast.makeText(applicationContext, "onPause", Toast.LENGTH_SHORT).show()
         Log.i("MyLog", "onPause")
-        sharedPref.edit().putInt("count", count).apply()
-        Log.i("MyLog", "valOnStop ${count}")
-        var nigg = 69
-        sharedPref.getInt("count", nigg)
-        Log.i("MyLog", "valOnStopRet ${nigg}")
+        val sharedPreferences = getSharedPreferences("shared", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.apply {
+            putInt("count", textCount.text.toString().toInt())
+        }.apply()
 
     }
     override fun onStop() {
