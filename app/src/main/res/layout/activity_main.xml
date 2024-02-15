@@ -4,20 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:textColor="?colorOnSecondary"
+    android:background="?colorSecondary"
     tools:context=".MainActivity">
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/running_abstract"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/myToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#BDAADF"
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/textViewCounter"
-            android:layout_width="match_parent"
-            android:layout_height="57dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?colorSecondary"
             android:gravity="center"
-            android:text="0" />
+            android:text="0"
+            android:textColor="?colorOnSecondary"
+            android:textSize="34sp" />
 
         <Button
             android:id="@+id/buttonUp"
@@ -37,9 +52,11 @@
             android:id="@+id/plainTextName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="?colorSecondary"
             android:ems="10"
             android:hint="Name"
-            android:inputType="text" />
+            android:inputType="text"
+            android:textColor="?colorOnSecondary" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

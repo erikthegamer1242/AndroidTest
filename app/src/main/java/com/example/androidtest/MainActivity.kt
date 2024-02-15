@@ -6,6 +6,8 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
@@ -26,6 +28,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setSupportActionBar(findViewById(R.id.myToolbar))
         textCount = findViewById<View>(R.id.textViewCounter) as TextView
         val sharedPreferences = getSharedPreferences("shared", Context.MODE_PRIVATE)
         count = sharedPreferences.getInt("count", 0)
@@ -103,6 +106,25 @@ class MainActivity : AppCompatActivity() {
         Log.i("MyLog", "onRestoreInstanceState")
 
         count = savedInstanceState.getInt(COUNT_KEY)
+    }
+//    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+//        val inflater = menuInflater
+//        inflater.inflate(R.menu.menu_main, menu)
+//        return super.onCreateOptionsMenu(menu)
+//    }
+override fun onCreateOptionsMenu(menu: Menu): Boolean {
+    // Inflate the menu; this adds items to the action bar if it is present.
+    menuInflater.inflate(R.menu.menu_main, menu)
+    return true
+}
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.restore_counter -> {
+                count = 0
+                true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
 }
