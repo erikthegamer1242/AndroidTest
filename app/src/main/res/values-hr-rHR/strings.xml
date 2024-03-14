@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="buttonUp">GORE</string>
+    <string name="buttonDown">DOLJE</string>
+    <string name="textViewContextMenu">Drži me</string>
+    <string name="successMessage">Napravio si 10 koraka</string>
+    <string name="croatian">Hrvatski</string>
+    <string name="english">Engleski</string>
+    <string name="phoneNumber">Broj Mobitela:</string>
+    <string name="sendSMS">Pošalji SMS:</string>
+</resources>

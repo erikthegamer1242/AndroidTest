@@ -1,4 +1,11 @@
 <resources>
-    <string name="app_name">Fit Runner</string>
-    <string name="saved_high_score_key">0</string>
+    <string name="app_name" translatable="false">Fit Runner</string>
+    <string name="buttonUp">UP</string>
+    <string name="buttonDown">DOWN</string>
+    <string name="textViewContextMenu">Hold me</string>
+    <string name="successMessage">You reached 10 steps.</string>
+    <string name="phoneNumber">Phone Number:</string>
+    <string name="sendSMS">Send SMS:</string>
+    <string name="croatian">Croatian</string>
+    <string name="english">English</string>
 </resources>

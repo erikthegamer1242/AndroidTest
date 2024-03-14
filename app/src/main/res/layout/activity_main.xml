@@ -4,59 +4,97 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:textColor="?colorOnSecondary"
-    android:background="?colorSecondary"
+    android:background="@drawable/running_abstract"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/running_abstract"
         android:gravity="center"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/myToolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#BDAADF"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_gravity="start"
+            android:background="?attr/colorPrimary"
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             tools:ignore="MissingConstraints" />
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="110sp" />
+
         <TextView
-            android:id="@+id/textViewCounter"
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="?colorSecondary"
             android:gravity="center"
             android:text="0"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="?colorOnSecondary"
-            android:textSize="34sp" />
+            android:textSize="48sp" />
 
         <Button
             android:id="@+id/buttonUp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:width="145dp"
+            android:height="75dp"
+            android:gravity="center"
             android:onClick="setOnClickListenerUp"
-            android:text="UP" />
+            android:layout_marginBottom="150dp"
+            android:text="@string/buttonUp"
+            android:textSize="25dp" />
 
         <Button
             android:id="@+id/buttonDown"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="-140sp"
+            android:width="145dp"
+            android:height="75dp"
             android:onClick="setOnClickListenerDown"
-            android:text="DOWN" />
+            android:text="@string/buttonDown"
+            android:textSize="25dp" />
 
         <EditText
             android:id="@+id/plainTextName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="?colorSecondary"
-            android:ems="10"
-            android:hint="Name"
-            android:inputType="text"
-            android:textColor="?colorOnSecondary" />
+            android:text="BO"
+            android:textColor="?colorOnSecondary"
+            android:textSize="52sp" />
+
+        <TextView
+            android:id="@+id/textViewContextMenu"
+            android:name="@string/textViewContextMenu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="170sp"
+            android:paddingTop="50dp"
+            android:text="@string/textViewContextMenu"
+            android:textColor="#fff"
+            android:background="#000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+

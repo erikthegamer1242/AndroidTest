@@ -10,8 +10,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AndroidTest"
+        android:theme="@style/Theme.AndoridTest"
         tools:targetApi="31">
+        <activity
+            android:name=".AnalyticsActivity"
+            android:exported="false" />
         <activity
             android:name=".SuccessActivity"
             android:exported="false" />
